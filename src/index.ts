@@ -14,7 +14,7 @@ const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8000;
 const app = express();
 const httpServer = http.createServer(app);
 const io = new SocketIOServer(httpServer, {
-  cors: { origin: '*', methods: ['GET', 'POST'] },
+  cors: { origin: 'https://deploy-backend.vercal.app', methods: ['GET', 'POST'], credentials: true },
 });
 
 app.use(cors());
